@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Data;
-using System.Text;
 
 namespace TaskManage.Common
 {

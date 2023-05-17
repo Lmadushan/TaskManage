@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TaskManage.ViewModels;
 
 namespace TaskManage.Common.AutoMapperProfile
 {
@@ -6,12 +7,6 @@ namespace TaskManage.Common.AutoMapperProfile
     {
         public AutoMapperProfileConfiguration()
         {
-            #region Project Type ------------------------------------------------------------------
-            //CreateMap<ProjectType, BaseDropDownVM<Guid>>()
-            //    .ForMember(dest => dest.Value, src => src.MapFrom(s => s.Type));
-
-            //CreateMap<ProjectType, ProjectTypeVM>();
-            #endregion Project Type ---------------------------------------------------------------
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using TaskManage.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
+using TaskManage.Base.Entities;
+using TaskManage.Entities;
+using TaskManage.ViewModels;
 
 namespace TaskManage.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : DbContext
     {
         private readonly IConfiguration _configuration;
         public ApplicationDbContext(DbContextOptions options, IConfiguration configuration) : base(options)
@@ -16,7 +17,7 @@ namespace TaskManage.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("Task"));
+            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("TaskContext"));
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -35,7 +36,8 @@ namespace TaskManage.Data
 
         private static void ApplyGlobalFilters(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<TaskVM>();
+
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -82,5 +84,7 @@ namespace TaskManage.Data
             }
         }
 
+
+        public DbSet<TaskVM> Tasks { get; set; }
     }
 }

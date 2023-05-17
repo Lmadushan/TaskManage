@@ -13,9 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.Common\TaskManage.Common.csproj" />
     <ProjectReference Include="..\Task.Core\TaskManage.Core.csproj" />
-    <ProjectReference Include="..\Task.DTOs\TaskManage.DTOs.csproj" />
+    <ProjectReference Include="..\Task.ViewModels\TaskManage.ViewModels.csproj" />
   </ItemGroup>
 
 

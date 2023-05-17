@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaskManage.Entities
+namespace TaskManage.Base.Entities
 {
     public abstract class BaseEntity<TId> : IEntityPrimaryKey<TId>
     {

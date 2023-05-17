@@ -1,4 +1,4 @@
-﻿namespace TaskManage.Entities
+﻿namespace TaskManage.Base.Entities
 {
     public interface IEntityPrimaryKey<TId>
     {

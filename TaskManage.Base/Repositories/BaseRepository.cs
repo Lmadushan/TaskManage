@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using TaskManage.Core.Repositories;
 
-namespace TaskManage.Repositories
+namespace TaskManage.Base.Repositories
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : class
     {
@@ -109,16 +108,6 @@ namespace TaskManage.Repositories
         {
             return await _context.Set<T>().Where(expression).FirstAsync(cancellationToken);
         }
-
-        //public async Task<T> FindByConditionFirstOrDefaultAsyncAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
-        //{
-        //    return await _context.Set<T>().Where(expression).AsNoTracking().FirstOrDefaultAsync(cancellationToken);
-        //}
-
-        //public async Task<T> FindByConditionWithTrakingFirstOrDefaultAsyncAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
-        //{
-        //    return await _context.Set<T>().Where(expression).FirstOrDefaultAsync(cancellationToken);
-        //}
 
         public async Task<IEnumerable<T>> FindByConditionAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
         {

@@ -1,5 +1,5 @@
-﻿using TaskManage.Common.Middleware;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
+using TaskManage.Common.Middleware;
 
 namespace TaskManage.Common.Extensions
 {

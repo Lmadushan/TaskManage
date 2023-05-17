@@ -1,4 +1,4 @@
-﻿namespace TaskManage.DTOs
+﻿namespace TaskManage.Base.DTOs
 {
     public class BaseException : Exception
     {

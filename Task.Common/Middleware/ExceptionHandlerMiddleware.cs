@@ -12,7 +12,7 @@ namespace TaskManage.Common.Middleware
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionHandlerMiddleware> _logger;
 
-        public ExceptionHandlerMiddleware(ILogger<ExceptionHandlerMiddleware> logger,RequestDelegate next)
+        public ExceptionHandlerMiddleware(ILogger<ExceptionHandlerMiddleware> logger, RequestDelegate next)
         {
             _logger = logger;
             _next = next;
@@ -58,7 +58,7 @@ namespace TaskManage.Common.Middleware
                     break;
 
                 case SqlException sqlException:
-                    httpStatusCode= HttpStatusCode.BadRequest;
+                    httpStatusCode = HttpStatusCode.BadRequest;
                     errorResponse.ValidationErrors.Add(sqlException.Message);
                     result = JsonConvert.SerializeObject(errorResponse);
                     logger.LogError(result);
