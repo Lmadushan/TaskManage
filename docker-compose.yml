@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  taskmanage.webapi:
+    image: ${DOCKER_REGISTRY-}taskmanagewebapi
+    build:
+      context: .
+      dockerfile: Task.WebAPI\Dockerfile
